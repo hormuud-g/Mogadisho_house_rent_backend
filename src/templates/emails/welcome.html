@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Kirada Guryaha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .content {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 12px;
+        }
+        .role-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #e0e7ff;
+            color: #4f46e5;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Kirada Guryaha! 🏠</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Hello {{name}},</h2>
+            
+            <p>Thank you for joining Kirada Guryaha, Mogadishu's premier rental property platform! We're excited to help you with your property journey.</p>
+            
+            <div class="role-badge">
+                You joined as: {{role}}
+            </div>
+            
+            {{#ifCond role '===' 'tenant'}}
+            <h3>As a Tenant, you can:</h3>
+            <ul>
+                <li>🔍 Search and filter properties across all Mogadishu districts</li>
+                <li>❤️ Save your favorite properties for later</li>
+                <li>📝 Send inquiries to landlords directly</li>
+                <li>📅 Book properties for viewing or stay</li>
+                <li>⭐ Leave reviews after your stay</li>
+            </ul>
+            {{/ifCond}}
+            
+            {{#ifCond role '===' 'landlord'}}
+            <h3>As a Landlord, you can:</h3>
+            <ul>
+                <li>📋 List your properties for rent</li>
+                <li>📸 Upload photos and property details</li>
+                <li>💬 Respond to tenant inquiries</li>
+                <li>✅ Manage booking requests</li>
+                <li>📊 View analytics and property performance</li>
+            </ul>
+            <p><strong>Note:</strong> Your account requires verification before you can list properties. Please complete the verification process in your dashboard.</p>
+            {{/ifCond}}
+            
+            <p>Get started by exploring properties in Mogadishu:</p>
+            
+            <a href="{{loginUrl}}" class="button">Explore Properties</a>
+            
+            <p>If you have any questions, feel free to contact our support team.</p>
+            
+            <p>Best regards,<br>The Kirada Guryaha Team</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 Kirada Guryaha. All rights reserved.</p>
+            <p>Karaan District, Mogadishu, Somalia</p>
+        </div>
+    </div>
+</body>
+</html>
